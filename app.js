@@ -2,6 +2,7 @@
 // const multiply3  = require("./calculate/multiply");
 
 const { sum, multiply3 } = require("./calculate");
+const asyncModule = require("./async");
 // require steps
 // 1. it check file type
 // 2. load file content
@@ -17,4 +18,5 @@ sum(a, b);
 
 multiply3(a, b);
 
-const URI = "mongodb+srv://mauryasatish146:GlGtPNf8roUYgkyD@cluster0.4xq3d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const URI =
+  "mongodb+srv://mauryasatish146:GlGtPNf8roUYgkyD@cluster0.4xq3d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
