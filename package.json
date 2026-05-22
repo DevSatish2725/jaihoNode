@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "name": "jaiho-node",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github-account1:DevSatish2725/jaihoNode.git"
+  },
+  "author": "Satish",
+  "license": "ISC",
+  "description": ""
+}

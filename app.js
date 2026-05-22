@@ -1,22 +1,28 @@
-// const { sum } = require("./calculate/sum");
-// const multiply3  = require("./calculate/multiply");
+const express = require("express");
+const { adminAuth, userAuth } = require("./middlewares");
+const app = express();
 
-const { sum, multiply3 } = require("./calculate");
-const asyncModule = require("./async");
-// require steps
-// 1. it check file type
-// 2. load file content
-// 3. wraps inside an IIFE
-// 4. Evaluation(in this step module.exports added in the IIFE)
-// 5. Caching (it chaches file so that if same file used in multiple modules that will
-// n't run again and again)
+app.use("/admin", adminAuth);
+app.get("/admin/users", (req, res) => {
+  res.send("All data sent.");
+});
 
-var a = 10;
-var b = 20;
+app.delete("/admin/deleteuser", (req, res) => {
+  res.send("User is deleted");
+});
 
-sum(a, b);
+app.get("/users/login", (req, res) => {
+  res.send("User logged in");
+});
+app.get("/users/:userid", (req, res) => {
+  const userId = req.params.userid;
 
-multiply3(a, b);
+  res.send(`User id ${userId}`);
+});
+app.get("/users", userAuth, (req, res) => {
+  res.send("Users data sent.");
+});
 
-const URI =
-  "mongodb+srv://mauryasatish146:GlGtPNf8roUYgkyD@cluster0.4xq3d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+app.listen(9712, () => {
+  console.log("Server is listening on 9712 port");
+});
